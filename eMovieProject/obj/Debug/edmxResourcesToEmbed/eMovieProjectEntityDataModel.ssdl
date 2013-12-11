@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eMovieProjectDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="eMovieProjectDBModelStoreContainer">
+    <EntitySet Name="Administrador" EntityType="eMovieProjectDBModel.Store.Administrador" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cajero" EntityType="eMovieProjectDBModel.Store.Cajero" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categoria" EntityType="eMovieProjectDBModel.Store.Categoria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cliente" EntityType="eMovieProjectDBModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Compra" EntityType="eMovieProjectDBModel.Store.Compra" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetalleAdquirido" EntityType="eMovieProjectDBModel.Store.DetalleAdquirido" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetallePedido" EntityType="eMovieProjectDBModel.Store.DetallePedido" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pedido" EntityType="eMovieProjectDBModel.Store.Pedido" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pelicula" EntityType="eMovieProjectDBModel.Store.Pelicula" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PeliculasProveedor" EntityType="eMovieProjectDBModel.Store.PeliculasProveedor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Proveedor" EntityType="eMovieProjectDBModel.Store.Proveedor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Renta" EntityType="eMovieProjectDBModel.Store.Renta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="eMovieProjectDBModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="fk_adminCajero" Association="eMovieProjectDBModel.Store.fk_adminCajero">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Cajero" EntitySet="Cajero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_adminUser" Association="eMovieProjectDBModel.Store.fk_adminUser">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Administrador" EntitySet="Administrador" />
+    </AssociationSet>
+    <AssociationSet Name="fk_clienteUser" Association="eMovieProjectDBModel.Store.fk_clienteUser">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_compraCajero" Association="eMovieProjectDBModel.Store.fk_compraCajero">
+      <End Role="Cajero" EntitySet="Cajero" />
+      <End Role="Compra" EntitySet="Compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_compraCliente" Association="eMovieProjectDBModel.Store.fk_compraCliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Compra" EntitySet="Compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_compraDetalle" Association="eMovieProjectDBModel.Store.fk_compraDetalle">
+      <End Role="DetalleAdquirido" EntitySet="DetalleAdquirido" />
+      <End Role="Compra" EntitySet="Compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_detalleAdquiridoPelicula" Association="eMovieProjectDBModel.Store.fk_detalleAdquiridoPelicula">
+      <End Role="Pelicula" EntitySet="Pelicula" />
+      <End Role="DetalleAdquirido" EntitySet="DetalleAdquirido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_detallePedido" Association="eMovieProjectDBModel.Store.fk_detallePedido">
+      <End Role="Pedido" EntitySet="Pedido" />
+      <End Role="DetallePedido" EntitySet="DetallePedido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_detallePelicula" Association="eMovieProjectDBModel.Store.fk_detallePelicula">
+      <End Role="PeliculasProveedor" EntitySet="PeliculasProveedor" />
+      <End Role="DetallePedido" EntitySet="DetallePedido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pedidoAdministrador" Association="eMovieProjectDBModel.Store.fk_pedidoAdministrador">
+      <End Role="Administrador" EntitySet="Administrador" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pedidoProveedor" Association="eMovieProjectDBModel.Store.fk_pedidoProveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_peliculaCategoria" Association="eMovieProjectDBModel.Store.fk_peliculaCategoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Pelicula" EntitySet="Pelicula" />
+    </AssociationSet>
+    <AssociationSet Name="fk_peliculaProveedor" Association="eMovieProjectDBModel.Store.fk_peliculaProveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="PeliculasProveedor" EntitySet="PeliculasProveedor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_peliculaProveedorCategoria" Association="eMovieProjectDBModel.Store.fk_peliculaProveedorCategoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="PeliculasProveedor" EntitySet="PeliculasProveedor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rentaCajero" Association="eMovieProjectDBModel.Store.fk_rentaCajero">
+      <End Role="Cajero" EntitySet="Cajero" />
+      <End Role="Renta" EntitySet="Renta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rentaCliente" Association="eMovieProjectDBModel.Store.fk_rentaCliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Renta" EntitySet="Renta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rentaDetalle" Association="eMovieProjectDBModel.Store.fk_rentaDetalle">
+      <End Role="DetalleAdquirido" EntitySet="DetalleAdquirido" />
+      <End Role="Renta" EntitySet="Renta" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Administrador">
+    <Key>
+      <PropertyRef Name="idAdministrador" />
+    </Key>
+    <Property Name="idAdministrador" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cajero">
+    <Key>
+      <PropertyRef Name="idCajero" />
+    </Key>
+    <Property Name="idCajero" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="idCategoria" />
+    </Key>
+    <Property Name="idCategoria" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="categoria" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="idCliente" />
+    </Key>
+    <Property Name="idCliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="numeroTarjetaCredito" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="pinTarjetaCredito" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="Compra">
+    <Key>
+      <PropertyRef Name="idCompra" />
+    </Key>
+    <Property Name="idCompra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idCliente" Type="int" Nullable="false" />
+    <Property Name="idCajero" Type="int" Nullable="false" />
+    <Property Name="fechaCompra" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="idDetalleAdquirido" Type="int" Nullable="false" />
+    <Property Name="total" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleAdquirido">
+    <Key>
+      <PropertyRef Name="idDetalleAdquirido" />
+    </Key>
+    <Property Name="idDetalleAdquirido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idPelicula" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetallePedido">
+    <Key>
+      <PropertyRef Name="idDetalle" />
+    </Key>
+    <Property Name="idDetalle" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idPedido" Type="int" Nullable="false" />
+    <Property Name="idPelicula" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="idPedido" />
+    </Key>
+    <Property Name="idPedido" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idAdministrador" Type="int" Nullable="false" />
+    <Property Name="idProveedor" Type="int" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+    <Property Name="fechaPedido" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="fechaEntrega" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="totalPrecio" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="cantidadProductos" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pelicula">
+    <Key>
+      <PropertyRef Name="idPelicula" />
+    </Key>
+    <Property Name="idPelicula" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="pelicula" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="precio" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="productora" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="protagonistas" Type="varchar" MaxLength="300" />
+    <Property Name="ano" Type="varchar" MaxLength="5" />
+    <Property Name="idCategoria" Type="int" Nullable="false" />
+    <Property Name="fotografia" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="trailer" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="PeliculasProveedor">
+    <Key>
+      <PropertyRef Name="idPelicula" />
+    </Key>
+    <Property Name="idPelicula" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idProveedor" Type="int" Nullable="false" />
+    <Property Name="pelicula" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="precio" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="productora" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="protagonistas" Type="varchar" MaxLength="300" />
+    <Property Name="ano" Type="varchar" MaxLength="5" />
+    <Property Name="idCategoria" Type="int" Nullable="false" />
+    <Property Name="fotografia" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="trailer" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="idProveedor" />
+    </Key>
+    <Property Name="idProveedor" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombreProveedor" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="nit" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="telefono" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="direccion" Type="varchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Renta">
+    <Key>
+      <PropertyRef Name="idRenta" />
+    </Key>
+    <Property Name="idRenta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idCliente" Type="int" Nullable="false" />
+    <Property Name="idCajero" Type="int" Nullable="false" />
+    <Property Name="fechaRenta" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="fechaDevolucion" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="idDetalleAdquirido" Type="int" Nullable="false" />
+    <Property Name="total" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombreCompleto" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="apellidoCompleto" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="loginUser" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="contraseña" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="fotografia" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="fk_adminCajero">
+    <End Role="Usuario" Type="eMovieProjectDBModel.Store.Usuario" Multiplicity="1" />
+    <End Role="Cajero" Type="eMovieProjectDBModel.Store.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Cajero">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_adminUser">
+    <End Role="Usuario" Type="eMovieProjectDBModel.Store.Usuario" Multiplicity="1" />
+    <End Role="Administrador" Type="eMovieProjectDBModel.Store.Administrador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Administrador">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_clienteUser">
+    <End Role="Usuario" Type="eMovieProjectDBModel.Store.Usuario" Multiplicity="1" />
+    <End Role="Cliente" Type="eMovieProjectDBModel.Store.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_compraCajero">
+    <End Role="Cajero" Type="eMovieProjectDBModel.Store.Cajero" Multiplicity="1" />
+    <End Role="Compra" Type="eMovieProjectDBModel.Store.Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cajero">
+        <PropertyRef Name="idCajero" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="idCajero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_compraCliente">
+    <End Role="Cliente" Type="eMovieProjectDBModel.Store.Cliente" Multiplicity="1" />
+    <End Role="Compra" Type="eMovieProjectDBModel.Store.Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_compraDetalle">
+    <End Role="DetalleAdquirido" Type="eMovieProjectDBModel.Store.DetalleAdquirido" Multiplicity="1" />
+    <End Role="Compra" Type="eMovieProjectDBModel.Store.Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DetalleAdquirido">
+        <PropertyRef Name="idDetalleAdquirido" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="idDetalleAdquirido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_detalleAdquiridoPelicula">
+    <End Role="Pelicula" Type="eMovieProjectDBModel.Store.Pelicula" Multiplicity="1" />
+    <End Role="DetalleAdquirido" Type="eMovieProjectDBModel.Store.DetalleAdquirido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pelicula">
+        <PropertyRef Name="idPelicula" />
+      </Principal>
+      <Dependent Role="DetalleAdquirido">
+        <PropertyRef Name="idPelicula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_detallePedido">
+    <End Role="Pedido" Type="eMovieProjectDBModel.Store.Pedido" Multiplicity="1" />
+    <End Role="DetallePedido" Type="eMovieProjectDBModel.Store.DetallePedido" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="idPedido" />
+      </Principal>
+      <Dependent Role="DetallePedido">
+        <PropertyRef Name="idDetalle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_detallePelicula">
+    <End Role="PeliculasProveedor" Type="eMovieProjectDBModel.Store.PeliculasProveedor" Multiplicity="1" />
+    <End Role="DetallePedido" Type="eMovieProjectDBModel.Store.DetallePedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PeliculasProveedor">
+        <PropertyRef Name="idPelicula" />
+      </Principal>
+      <Dependent Role="DetallePedido">
+        <PropertyRef Name="idPelicula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pedidoAdministrador">
+    <End Role="Administrador" Type="eMovieProjectDBModel.Store.Administrador" Multiplicity="1" />
+    <End Role="Pedido" Type="eMovieProjectDBModel.Store.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrador">
+        <PropertyRef Name="idAdministrador" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="idAdministrador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pedidoProveedor">
+    <End Role="Proveedor" Type="eMovieProjectDBModel.Store.Proveedor" Multiplicity="1" />
+    <End Role="Pedido" Type="eMovieProjectDBModel.Store.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="idProveedor" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="idProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_peliculaCategoria">
+    <End Role="Categoria" Type="eMovieProjectDBModel.Store.Categoria" Multiplicity="1" />
+    <End Role="Pelicula" Type="eMovieProjectDBModel.Store.Pelicula" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="Pelicula">
+        <PropertyRef Name="idCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_peliculaProveedor">
+    <End Role="Proveedor" Type="eMovieProjectDBModel.Store.Proveedor" Multiplicity="1" />
+    <End Role="PeliculasProveedor" Type="eMovieProjectDBModel.Store.PeliculasProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="idProveedor" />
+      </Principal>
+      <Dependent Role="PeliculasProveedor">
+        <PropertyRef Name="idProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_peliculaProveedorCategoria">
+    <End Role="Categoria" Type="eMovieProjectDBModel.Store.Categoria" Multiplicity="1" />
+    <End Role="PeliculasProveedor" Type="eMovieProjectDBModel.Store.PeliculasProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="PeliculasProveedor">
+        <PropertyRef Name="idCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rentaCajero">
+    <End Role="Cajero" Type="eMovieProjectDBModel.Store.Cajero" Multiplicity="1" />
+    <End Role="Renta" Type="eMovieProjectDBModel.Store.Renta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cajero">
+        <PropertyRef Name="idCajero" />
+      </Principal>
+      <Dependent Role="Renta">
+        <PropertyRef Name="idCajero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rentaCliente">
+    <End Role="Cliente" Type="eMovieProjectDBModel.Store.Cliente" Multiplicity="1" />
+    <End Role="Renta" Type="eMovieProjectDBModel.Store.Renta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="Renta">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rentaDetalle">
+    <End Role="DetalleAdquirido" Type="eMovieProjectDBModel.Store.DetalleAdquirido" Multiplicity="1" />
+    <End Role="Renta" Type="eMovieProjectDBModel.Store.Renta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DetalleAdquirido">
+        <PropertyRef Name="idDetalleAdquirido" />
+      </Principal>
+      <Dependent Role="Renta">
+        <PropertyRef Name="idDetalleAdquirido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

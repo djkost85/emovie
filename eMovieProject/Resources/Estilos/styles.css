@@ -1,0 +1,350 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section,div {
+	display: block;
+	position:relative;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/*
+ 	Hoja de Estilos eMovie
+ 	@autor: JnSamines
+ 	Versión 3.0 Alpha
+*/
+
+body#main-wrapper{
+	background-color:#333;
+	background-image:url(../Imagenes/Layout/main-wrapper-bg.png);
+	background-repeat:repeat;
+	font:16px "QuoteRegular",Helvetica,Tahoma, Arial;
+	color:#333;
+}
+	section#page-wrapper{
+		background-color: #fff;
+		background-image:url(../Imagenes/Layout/page-wrapper-bg.jpg);
+		height:800px;
+		margin:10px 0 60px 0;
+		min-width:1200px;
+		width:100%;
+	}
+		section#area-wrapper{
+			height:100%;
+			margin:0 auto;
+			min-width:1100px;
+			width:90%;
+		}
+		header#header-wrapper{
+			height:140px;
+			width:100%;
+		}
+			section#logo-wrapper{
+				height:100%;
+				width:50%;
+				float:left;
+			}
+				section#logo-wrapper h1{
+					height:100%;
+					width:350px;
+				}
+					section#logo-wrapper h1 a{
+						background-color:transparent;
+						background-image: url(../Imagenes/Layout/logotipo.png);
+						background-repeat:no-repeat;
+						background-position:left center;
+						display:block;
+						color:#fff;
+						height:140px;
+						text-decoration:none;
+						text-indent:-10000px;
+						width:350px;
+						margin-left:20px;
+					}
+			section#menu-wrapper{
+				height:100%;
+				width:50%;
+				float:right;
+			}
+				ul#top-menu{
+					height:45px;
+					width:100%;
+					top:0px;
+				}
+					ul#top-menu li{
+						display:inline;
+						float:right;
+						margin:1px;
+					}
+						ul#top-menu li a{
+							background-color:#333;
+							color:#fff;
+							display:block;
+							font:16px "QuoteRegular",Helvetica,Tahoma, Arial;
+							padding:8px 10px;
+							text-align:center;
+							text-decoration:none;
+							text-transform:uppercase;
+							vertical-align:middle;
+							-webkit-transition:all 0.1s ease-in;
+                            -moz-transition:all 0.1s ease-in;
+                            transition:all 0.1s ease-in;
+						}
+						ul#top-menu li a:hover, ul#top-menu li a.active
+						{
+						    background:#006699;
+						    padding:20px 10px;
+						    display:block;
+						    -webkit-transition:all 0.1s ease-out;
+                            -moz-transition:all 0.1s ease-out;
+                            transition:all 0.1s ease-out;
+						}
+		section#content-wrapper{
+			height:660px;
+			min-width:1100px;
+			width:100%;
+		}   
+			section#work-wrapper{
+				height:100%;
+				min-width:770px;
+				width:70%;
+				position:absolute;
+			}
+				aside#info-wrapper{
+					background-color:#006699;
+					height:35px;
+					width:98%;
+					margin:0 1%;
+				}
+					span#notify{
+						font:20px "QuoteRegular",Helvetica,Tahoma, Arial;
+						color:#fff;
+						vertical-align:middle;
+						display:block;
+						text-transform:uppercase;
+						padding:6px 10px 5px 10px;
+						float:left;
+					}
+					span#notify-icon
+					{
+					    display:block;
+					    background-image:url(../Imagenes/Layout/white-grid.png);
+					    background-repeat:no-repeat;
+					    background-position:center;
+					    width:36px;
+					    height:36px;
+					    float:left;   
+					}
+					section#movies-wrapper{
+						background:#fff;
+						height:550px;
+						padding:1%;
+						width:98%;
+						border:1px solid #fff;
+					}
+						section#movie-container{
+							background:#fff;
+							border:1px solid #ddd;
+							height:500px;
+							padding:10px;
+							width:97%;
+						}
+
+							section#movie-container ul li{
+	                            float: left;
+	                            height: 150px;
+	                            list-style: none outside none;
+	                            margin: 5px;
+	                            position: relative;
+	                            width: 120px;
+                                border:2px solid #eee;
+                                -webkit-transition:all 0.5s ease-in;
+                                -moz-transition:all 0.5s ease-in;
+                                transition:all 0.5s ease-in;
+                            }
+                            section#movie-container ul li:hover
+                            {
+                                border:2px solid #006699;
+                                -webkit-transition:all 0.5s ease-out;
+                                -moz-transition:all 0.5s ease-out;
+                                transition:all 0.5s ease-out;  
+                            }
+
+			section#sidebar{
+				background:#eee;
+				height:100%;				
+				min-width:330px;
+				width:30%;
+				float:right;
+				border: 1px solid #eee;
+			}
+				aside#filter-options{
+					background:#fff;
+					border:1px solid #ddd;
+					height:80px;
+					width: 97%;
+					margin:1.5%;
+				}
+				    div.select-container
+		            {
+		                width:48%;
+		                height:40%;
+		                padding:1%;
+		       	        float:left;
+			            display:inline;
+		            }
+		            select.filterchosen
+		            {
+		                width:100%;
+		            }
+		            input#buscador
+		            {
+		                width:100%;
+		                height:30px;
+		                border:1px solid #bbb;
+		                color:#666;
+		                padding:5px 10px;
+		                font:16px "QuoteRegular",Helvetica, Arial;
+		            }
+		            input#display_mode_grid
+		            {
+		                width:32px;
+		                height:32px;
+		                background-color:#fff;
+		                background-image:url(../Imagenes/Layout/grid.png);
+		                background-repeat:no-repeat;
+		                background-position:center;
+		                float:left;
+		                margin:-2px 5px;
+		            }
+		            input#display_mode_list
+		            {
+		                width:32px;
+		                height:32px;
+		                background-color:#fff;
+		                background-image:url(../Imagenes/Layout/list.png);
+		                background-repeat:no-repeat;
+		                background-position:center;
+		                float:left;
+		                margin:-2px 0px;
+		            }
+				aside#shopping-cart-area{
+					background:#fff;
+					border:1px solid #ddd;
+					height:130px;
+					width:97%;
+					margin:1.5%;
+				}
+				aside#movie-descriptor{
+					background:#fff;
+					border:1px solid #ddd;
+					height:220px;
+					width:97%;
+					margin:1.5%;
+				}
+				aside#movie-theater-descriptor{
+					background:#fff;
+					border:1px solid #ddd;
+					height:150px;
+					width:97%;
+					margin:1.5%;
+				}
+/*	
+	Recursos de Página
+*/
+
+@font-face {
+    font-family: 'QuoteRegular';
+    src: url('../Fuentes/Quote/quote-webfont.eot');
+    src: url('../Fuentes/Quote/quote-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../Fuentes/Quote/quote-webfont.woff') format('woff'),
+         url('../Fuentes/Quote/quote-webfont.ttf') format('truetype'),
+         url('../Fuentes/Quote/quote-webfont.svg#QuoteRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.box-radius{
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px;
+	-khtml-border-radius:5px;
+	border-radius:5px;
+}
+
+.button {
+   border: 1px solid #DDD;
+   border-radius: 3px;
+   text-shadow: 0 1px 1px white;
+   -webkit-box-shadow: 0 1px 1px #fff;
+   -moz-box-shadow:    0 1px 1px #fff;
+   box-shadow:         0 1px 1px #fff;
+   padding: 10px 10px;
+   margin:3px 20px;
+   white-space: nowrap;
+   vertical-align: middle;
+   color: #666;
+   background: transparent;
+   cursor: pointer;
+   -webkit-transition:all 0.4s ease-in;
+   display:block;
+}
+.button:hover, .button:focus {
+   border-color: #999;
+   background: -webkit-linear-gradient(top, white, #E0E0E0);
+   background:    -moz-linear-gradient(top, white, #E0E0E0);
+   background:     -ms-linear-gradient(top, white, #E0E0E0);
+   background:      -o-linear-gradient(top, white, #E0E0E0);
+   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #fff;
+   -moz-box-shadow:    0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #fff;
+   box-shadow:         0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #fff;
+}
+.button:active {
+   border: 1px solid #AAA;
+   border-bottom-color: #CCC;
+   border-top-color: #999;
+   -webkit-box-shadow: inset 0 1px 2px #aaa;
+   -moz-box-shadow:    inset 0 1px 2px #aaa;
+   box-shadow:         inset 0 1px 2px #aaa;
+   background: -webkit-linear-gradient(top, #E6E6E6,gainsboro);
+   background:    -moz-linear-gradient(top, #E6E6E6, gainsboro);
+   background:     -ms-linear-gradient(top, #E6E6E6, gainsboro);
+   background:      -o-linear-gradient(top, #E6E6E6, gainsboro);
+}

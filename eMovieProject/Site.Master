@@ -1,0 +1,98 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="eMovieProject.SiteMaster" %>
+<!DOCTYPE>
+<!--[if lt IE 9]>
+	<script src="Resources/Scripts/html5.js"></script>
+<![endif]-->
+<html lang="es" title="eMovieProject">
+<head runat="server">
+	<meta charset="utf-8">
+	<title>eMovie Project</title>
+        <link rel="stylesheet" href="~/Resources/Estilos/styles.css" />
+        <link rel="stylesheet" href="~/Resources/Scripts/chosen/chosen.css" />
+        <script type="text/javascript" src="/Resources/Scripts/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="/Resources/Scripts/chosen/chosen.jquery.min.js"></script>
+        <script type="text/javascript" src="/Resources/Scripts/script.js"></script>
+    <asp:ContentPlaceHolder ID="HeaderPlaceHolder" runat="server">
+       <%-- Importanciones a nivel de pagina --%>
+    </asp:ContentPlaceHolder>
+</head>
+<body id="main-wrapper">
+    <form id="webappcontainer" runat=server>
+        <asp:ScriptManager ID="ScriptController" runat="server" AsyncPostBackErrorMessage="No se pudo cargar la información solicitada.">
+         </asp:ScriptManager>
+	    <section id="page-wrapper">
+		    <section id="area-wrapper">
+			    <header id="header-wrapper">
+				    <section id="logo-wrapper">
+					    <h1>
+                            <a title="eMovie Project" href="/">eMovie</a>
+                        </h1>
+				    </section>
+				    <section id="menu-wrapper">
+					    <ul id="top-menu">
+                            <asp:LoginView runat="server"  ID="LoginViewMenu">
+                                <AnonymousTemplate>
+                                	<li><a href="/Account/Login.aspx" title="Iniciar Sesión">Iniciar Sesión</a></li>
+                                    <li><a href="/Account/Register.aspx" title="Registro">Registro</a></li>
+                                </AnonymousTemplate>
+                                <LoggedInTemplate>
+                                    <li><asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar Sesión" LogoutPageUrl="~/"/></li>
+                                	<li><a href="/Carrito.aspx" title="Ir a Carrito">Carrito</a></li>
+						            <li><a href="/Perfil.aspx" title="Perfil de Usuario">
+                                        <asp:LoginName FormatString="{0}" runat="server" />
+                                    </a></li>
+                                </LoggedInTemplate>
+                            </asp:LoginView>
+                            <li><a href="/" title="Ir a la Tienda">Tienda</a></li>
+					    </ul>
+				    </section>
+			    </header>
+			    <section id="content-wrapper">
+				    <section id="work-wrapper">
+					    <aside id="info-wrapper">
+                            <span id="notify-icon"></span>
+							<span id="notify">
+								<asp:ContentPlaceHolder ID="NotifyPlaceHolder" runat="server">
+                                        
+                                </asp:ContentPlaceHolder>
+							</span>
+					    </aside>
+					    <section id="movies-wrapper">
+						    <section id="movie-container">
+                                <asp:ContentPlaceHolder ID="MoviePlaceHolder" runat="server">
+                                    <%-- Contenedor de las Peliculas --%>
+                                </asp:ContentPlaceHolder>
+						    </section>
+					    </section>
+					    <aside id="pager-wrapper">
+
+					    </aside>
+				    </section>
+				    <section id="sidebar">
+					    <aside id="filter-options">
+                            <asp:ContentPlaceHolder ID="FilterPlaceHolder" runat=server>
+                            </asp:ContentPlaceHolder>
+					    </aside>
+					    <aside id="shopping-cart-area">
+						    <asp:ContentPlaceHolder ID="ShoppingCartPlaceHolder" runat=server>
+                                
+                            </asp:ContentPlaceHolder>
+					    </aside>
+					    <aside id="movie-descriptor">
+                            <asp:ContentPlaceHolder runat=server ID="MovieDescriptorPlaceHolder">
+                            
+                            </asp:ContentPlaceHolder>
+					    </aside>
+					    <aside id="movie-theater-descriptor">
+
+					    </aside>
+				    </section>
+			    </section>
+		    </section>
+	    </section>
+	    <footer id="footer-wrapper">
+		    <p id="footer-content"></p>
+	    </footer>
+    </form>
+</body>
+</html>

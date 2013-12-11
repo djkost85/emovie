@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="eMovieProjectDBModelStoreContainer" CdmEntityContainer="eMovieProjectDBEntities">
+    <EntitySetMapping Name="Administrador">
+      <EntityTypeMapping TypeName="eMovieProjectDBModel.Administrador">
+        <MappingFragment StoreEntitySet="Administrador">
+          <ScalarProperty Name="idAdministrador" ColumnName="idAdministrador" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cajero">
+      <EntityTypeMapping TypeName="eMovieProjectDBModel.Cajero">
+        <MappingFragment StoreEntitySet="Cajero">
+          <ScalarProperty Name="idCajero" ColumnName="idCajero" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="eMovieProjectDBModel.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="categoria1" ColumnName="categoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="eMovieProjectDBModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="numeroTarjetaCredito" ColumnName="numeroTarjetaCredito" />
+          <ScalarProperty Name="pinTarjetaCredito" ColumnName="pinTarjetaCredito" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compra">
+      <EntityTypeMapping TypeName="eMovieProjectDBModel.Compra">
+        <MappingFragment StoreEntitySet="Compra">
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idCajero" ColumnName="idCajero" />
+          <ScalarProperty Name="fechaCompra" ColumnName="fechaCompra" />
+          <ScalarProperty Name="idDetalleAdquirido" ColumnName="idDetalleAdquirido" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleAdquirido">
+      <EntityTypeMapping TypeName="eMovieProjectDBModel.DetalleAdquirido">
+        <MappingFragment StoreEntitySet="DetalleAdquirido">
+          <ScalarProperty Name="idDetalleAdquirido" ColumnName="idDetalleAdquirido" />
+          <ScalarProperty Name="idPelicula" ColumnName="idPelicula" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetallePedido">
+      <EntityTypeMapping TypeName="eMovieProjectDBModel.DetallePedido">
+        <MappingFragment StoreEntitySet="DetallePedido">
+          <ScalarProperty Name="idDetalle" ColumnName="idDetalle" />
+          <ScalarProperty Name="idPedido" ColumnName="idPedido" />
+          <ScalarProperty Name="idPelicula" ColumnName="idPelicula" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pedido">
+      <EntityTypeMapping TypeName="eMovieProjectDBModel.Pedido">
+        <MappingFragment StoreEntitySet="Pedido">
+          <ScalarProperty Name="idPedido" ColumnName="idPedido" />
+          <ScalarProperty Name="idAdministrador" ColumnName="idAdministrador" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fechaPedido" ColumnName="fechaPedido" />
+          <ScalarProperty Name="fechaEntrega" ColumnName="fechaEntrega" />
+          <ScalarProperty Name="totalPrecio" ColumnName="totalPrecio" />
+          <ScalarProperty Name="cantidadProductos" ColumnName="cantidadProductos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pelicula">
+      <EntityTypeMapping TypeName="eMovieProjectDBModel.Pelicula">
+        <MappingFragment StoreEntitySet="Pelicula">
+          <ScalarProperty Name="idPelicula" ColumnName="idPelicula" />
+          <ScalarProperty Name="pelicula1" ColumnName="pelicula" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="productora" ColumnName="productora" />
+          <ScalarProperty Name="protagonistas" ColumnName="protagonistas" />
+          <ScalarProperty Name="ano" ColumnName="ano" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="fotografia" ColumnName="fotografia" />
+          <ScalarProperty Name="trailer" ColumnName="trailer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PeliculasProveedor">
+      <EntityTypeMapping TypeName="eMovieProjectDBModel.PeliculasProveedor">
+        <MappingFragment StoreEntitySet="PeliculasProveedor">
+          <ScalarProperty Name="idPelicula" ColumnName="idPelicula" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="pelicula" ColumnName="pelicula" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="productora" ColumnName="productora" />
+          <ScalarProperty Name="protagonistas" ColumnName="protagonistas" />
+          <ScalarProperty Name="ano" ColumnName="ano" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="fotografia" ColumnName="fotografia" />
+          <ScalarProperty Name="trailer" ColumnName="trailer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedor">
+      <EntityTypeMapping TypeName="eMovieProjectDBModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="nombreProveedor" ColumnName="nombreProveedor" />
+          <ScalarProperty Name="nit" ColumnName="nit" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Renta">
+      <EntityTypeMapping TypeName="eMovieProjectDBModel.Renta">
+        <MappingFragment StoreEntitySet="Renta">
+          <ScalarProperty Name="idRenta" ColumnName="idRenta" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idCajero" ColumnName="idCajero" />
+          <ScalarProperty Name="fechaRenta" ColumnName="fechaRenta" />
+          <ScalarProperty Name="fechaDevolucion" ColumnName="fechaDevolucion" />
+          <ScalarProperty Name="idDetalleAdquirido" ColumnName="idDetalleAdquirido" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="eMovieProjectDBModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="apellidoCompleto" ColumnName="apellidoCompleto" />
+          <ScalarProperty Name="loginUser" ColumnName="loginUser" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+          <ScalarProperty Name="fotografia" ColumnName="fotografia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

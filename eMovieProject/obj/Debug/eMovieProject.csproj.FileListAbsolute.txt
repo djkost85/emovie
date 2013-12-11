@@ -1,0 +1,5 @@
+C:\Users\Jonathan\Documents\Visual Studio 2010\Projects\eMovieProject\eMovieProject\bin\eMovieProject.dll
+C:\Users\Jonathan\Documents\Visual Studio 2010\Projects\eMovieProject\eMovieProject\bin\eMovieProject.pdb
+C:\Users\Jonathan\Documents\Visual Studio 2010\Projects\eMovieProject\eMovieProject\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Jonathan\Documents\Visual Studio 2010\Projects\eMovieProject\eMovieProject\obj\Debug\eMovieProject.dll
+C:\Users\Jonathan\Documents\Visual Studio 2010\Projects\eMovieProject\eMovieProject\obj\Debug\eMovieProject.pdb

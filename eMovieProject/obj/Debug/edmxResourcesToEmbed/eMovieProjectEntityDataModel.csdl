@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eMovieProjectDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="eMovieProjectDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrador" EntityType="eMovieProjectDBModel.Administrador" />
+    <EntitySet Name="Cajero" EntityType="eMovieProjectDBModel.Cajero" />
+    <EntitySet Name="Categoria" EntityType="eMovieProjectDBModel.Categoria" />
+    <EntitySet Name="Cliente" EntityType="eMovieProjectDBModel.Cliente" />
+    <EntitySet Name="Compra" EntityType="eMovieProjectDBModel.Compra" />
+    <EntitySet Name="DetalleAdquirido" EntityType="eMovieProjectDBModel.DetalleAdquirido" />
+    <EntitySet Name="DetallePedido" EntityType="eMovieProjectDBModel.DetallePedido" />
+    <EntitySet Name="Pedido" EntityType="eMovieProjectDBModel.Pedido" />
+    <EntitySet Name="Pelicula" EntityType="eMovieProjectDBModel.Pelicula" />
+    <EntitySet Name="PeliculasProveedor" EntityType="eMovieProjectDBModel.PeliculasProveedor" />
+    <EntitySet Name="Proveedor" EntityType="eMovieProjectDBModel.Proveedor" />
+    <EntitySet Name="Renta" EntityType="eMovieProjectDBModel.Renta" />
+    <EntitySet Name="Usuario" EntityType="eMovieProjectDBModel.Usuario" />
+    <AssociationSet Name="fk_adminUser" Association="eMovieProjectDBModel.fk_adminUser">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Administrador" EntitySet="Administrador" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pedidoAdministrador" Association="eMovieProjectDBModel.fk_pedidoAdministrador">
+      <End Role="Administrador" EntitySet="Administrador" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_adminCajero" Association="eMovieProjectDBModel.fk_adminCajero">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Cajero" EntitySet="Cajero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_compraCajero" Association="eMovieProjectDBModel.fk_compraCajero">
+      <End Role="Cajero" EntitySet="Cajero" />
+      <End Role="Compra" EntitySet="Compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rentaCajero" Association="eMovieProjectDBModel.fk_rentaCajero">
+      <End Role="Cajero" EntitySet="Cajero" />
+      <End Role="Renta" EntitySet="Renta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_peliculaCategoria" Association="eMovieProjectDBModel.fk_peliculaCategoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Pelicula" EntitySet="Pelicula" />
+    </AssociationSet>
+    <AssociationSet Name="fk_peliculaProveedorCategoria" Association="eMovieProjectDBModel.fk_peliculaProveedorCategoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="PeliculasProveedor" EntitySet="PeliculasProveedor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_clienteUser" Association="eMovieProjectDBModel.fk_clienteUser">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Cliente" EntitySet="Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="fk_compraCliente" Association="eMovieProjectDBModel.fk_compraCliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Compra" EntitySet="Compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rentaCliente" Association="eMovieProjectDBModel.fk_rentaCliente">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Renta" EntitySet="Renta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_compraDetalle" Association="eMovieProjectDBModel.fk_compraDetalle">
+      <End Role="DetalleAdquirido" EntitySet="DetalleAdquirido" />
+      <End Role="Compra" EntitySet="Compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_detalleAdquiridoPelicula" Association="eMovieProjectDBModel.fk_detalleAdquiridoPelicula">
+      <End Role="Pelicula" EntitySet="Pelicula" />
+      <End Role="DetalleAdquirido" EntitySet="DetalleAdquirido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rentaDetalle" Association="eMovieProjectDBModel.fk_rentaDetalle">
+      <End Role="DetalleAdquirido" EntitySet="DetalleAdquirido" />
+      <End Role="Renta" EntitySet="Renta" />
+    </AssociationSet>
+    <AssociationSet Name="fk_detallePedido" Association="eMovieProjectDBModel.fk_detallePedido">
+      <End Role="Pedido" EntitySet="Pedido" />
+      <End Role="DetallePedido" EntitySet="DetallePedido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_detallePelicula" Association="eMovieProjectDBModel.fk_detallePelicula">
+      <End Role="PeliculasProveedor" EntitySet="PeliculasProveedor" />
+      <End Role="DetallePedido" EntitySet="DetallePedido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pedidoProveedor" Association="eMovieProjectDBModel.fk_pedidoProveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_peliculaProveedor" Association="eMovieProjectDBModel.fk_peliculaProveedor">
+      <End Role="Proveedor" EntitySet="Proveedor" />
+      <End Role="PeliculasProveedor" EntitySet="PeliculasProveedor" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Administrador">
+    <Key>
+      <PropertyRef Name="idAdministrador" />
+    </Key>
+    <Property Name="idAdministrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="eMovieProjectDBModel.fk_adminUser" FromRole="Administrador" ToRole="Usuario" />
+    <NavigationProperty Name="Pedido" Relationship="eMovieProjectDBModel.fk_pedidoAdministrador" FromRole="Administrador" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="Cajero">
+    <Key>
+      <PropertyRef Name="idCajero" />
+    </Key>
+    <Property Name="idCajero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="eMovieProjectDBModel.fk_adminCajero" FromRole="Cajero" ToRole="Usuario" />
+    <NavigationProperty Name="Compra" Relationship="eMovieProjectDBModel.fk_compraCajero" FromRole="Cajero" ToRole="Compra" />
+    <NavigationProperty Name="Renta" Relationship="eMovieProjectDBModel.fk_rentaCajero" FromRole="Cajero" ToRole="Renta" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="idCategoria" />
+    </Key>
+    <Property Name="idCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categoria1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Pelicula" Relationship="eMovieProjectDBModel.fk_peliculaCategoria" FromRole="Categoria" ToRole="Pelicula" />
+    <NavigationProperty Name="PeliculasProveedor" Relationship="eMovieProjectDBModel.fk_peliculaProveedorCategoria" FromRole="Categoria" ToRole="PeliculasProveedor" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="idCliente" />
+    </Key>
+    <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="numeroTarjetaCredito" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="pinTarjetaCredito" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Usuario" Relationship="eMovieProjectDBModel.fk_clienteUser" FromRole="Cliente" ToRole="Usuario" />
+    <NavigationProperty Name="Compra" Relationship="eMovieProjectDBModel.fk_compraCliente" FromRole="Cliente" ToRole="Compra" />
+    <NavigationProperty Name="Renta" Relationship="eMovieProjectDBModel.fk_rentaCliente" FromRole="Cliente" ToRole="Renta" />
+  </EntityType>
+  <EntityType Name="Compra">
+    <Key>
+      <PropertyRef Name="idCompra" />
+    </Key>
+    <Property Name="idCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCliente" Type="Int32" Nullable="false" />
+    <Property Name="idCajero" Type="Int32" Nullable="false" />
+    <Property Name="fechaCompra" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="idDetalleAdquirido" Type="Int32" Nullable="false" />
+    <Property Name="total" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cajero" Relationship="eMovieProjectDBModel.fk_compraCajero" FromRole="Compra" ToRole="Cajero" />
+    <NavigationProperty Name="Cliente" Relationship="eMovieProjectDBModel.fk_compraCliente" FromRole="Compra" ToRole="Cliente" />
+    <NavigationProperty Name="DetalleAdquirido" Relationship="eMovieProjectDBModel.fk_compraDetalle" FromRole="Compra" ToRole="DetalleAdquirido" />
+  </EntityType>
+  <EntityType Name="DetalleAdquirido">
+    <Key>
+      <PropertyRef Name="idDetalleAdquirido" />
+    </Key>
+    <Property Name="idDetalleAdquirido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPelicula" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Compra" Relationship="eMovieProjectDBModel.fk_compraDetalle" FromRole="DetalleAdquirido" ToRole="Compra" />
+    <NavigationProperty Name="Pelicula" Relationship="eMovieProjectDBModel.fk_detalleAdquiridoPelicula" FromRole="DetalleAdquirido" ToRole="Pelicula" />
+    <NavigationProperty Name="Renta" Relationship="eMovieProjectDBModel.fk_rentaDetalle" FromRole="DetalleAdquirido" ToRole="Renta" />
+  </EntityType>
+  <EntityType Name="DetallePedido">
+    <Key>
+      <PropertyRef Name="idDetalle" />
+    </Key>
+    <Property Name="idDetalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPedido" Type="Int32" Nullable="false" />
+    <Property Name="idPelicula" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Pedido" Relationship="eMovieProjectDBModel.fk_detallePedido" FromRole="DetallePedido" ToRole="Pedido" />
+    <NavigationProperty Name="PeliculasProveedor" Relationship="eMovieProjectDBModel.fk_detallePelicula" FromRole="DetallePedido" ToRole="PeliculasProveedor" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="idPedido" />
+    </Key>
+    <Property Name="idPedido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idAdministrador" Type="Int32" Nullable="false" />
+    <Property Name="idProveedor" Type="Int32" Nullable="false" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+    <Property Name="fechaPedido" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="fechaEntrega" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="totalPrecio" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="cantidadProductos" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Administrador" Relationship="eMovieProjectDBModel.fk_pedidoAdministrador" FromRole="Pedido" ToRole="Administrador" />
+    <NavigationProperty Name="DetallePedido" Relationship="eMovieProjectDBModel.fk_detallePedido" FromRole="Pedido" ToRole="DetallePedido" />
+    <NavigationProperty Name="Proveedor" Relationship="eMovieProjectDBModel.fk_pedidoProveedor" FromRole="Pedido" ToRole="Proveedor" />
+  </EntityType>
+  <EntityType Name="Pelicula">
+    <Key>
+      <PropertyRef Name="idPelicula" />
+    </Key>
+    <Property Name="idPelicula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pelicula1" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="precio" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="productora" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="protagonistas" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="ano" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="idCategoria" Type="Int32" Nullable="false" />
+    <Property Name="fotografia" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="trailer" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Categoria" Relationship="eMovieProjectDBModel.fk_peliculaCategoria" FromRole="Pelicula" ToRole="Categoria" />
+    <NavigationProperty Name="DetalleAdquirido" Relationship="eMovieProjectDBModel.fk_detalleAdquiridoPelicula" FromRole="Pelicula" ToRole="DetalleAdquirido" />
+  </EntityType>
+  <EntityType Name="PeliculasProveedor">
+    <Key>
+      <PropertyRef Name="idPelicula" />
+    </Key>
+    <Property Name="idPelicula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idProveedor" Type="Int32" Nullable="false" />
+    <Property Name="pelicula" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="precio" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="productora" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="protagonistas" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="ano" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="idCategoria" Type="Int32" Nullable="false" />
+    <Property Name="fotografia" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="trailer" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Categoria" Relationship="eMovieProjectDBModel.fk_peliculaProveedorCategoria" FromRole="PeliculasProveedor" ToRole="Categoria" />
+    <NavigationProperty Name="DetallePedido" Relationship="eMovieProjectDBModel.fk_detallePelicula" FromRole="PeliculasProveedor" ToRole="DetallePedido" />
+    <NavigationProperty Name="Proveedor" Relationship="eMovieProjectDBModel.fk_peliculaProveedor" FromRole="PeliculasProveedor" ToRole="Proveedor" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="idProveedor" />
+    </Key>
+    <Property Name="idProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreProveedor" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="nit" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="telefono" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="direccion" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Pedido" Relationship="eMovieProjectDBModel.fk_pedidoProveedor" FromRole="Proveedor" ToRole="Pedido" />
+    <NavigationProperty Name="PeliculasProveedor" Relationship="eMovieProjectDBModel.fk_peliculaProveedor" FromRole="Proveedor" ToRole="PeliculasProveedor" />
+  </EntityType>
+  <EntityType Name="Renta">
+    <Key>
+      <PropertyRef Name="idRenta" />
+    </Key>
+    <Property Name="idRenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCliente" Type="Int32" Nullable="false" />
+    <Property Name="idCajero" Type="Int32" Nullable="false" />
+    <Property Name="fechaRenta" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="fechaDevolucion" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="idDetalleAdquirido" Type="Int32" Nullable="false" />
+    <Property Name="total" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cajero" Relationship="eMovieProjectDBModel.fk_rentaCajero" FromRole="Renta" ToRole="Cajero" />
+    <NavigationProperty Name="Cliente" Relationship="eMovieProjectDBModel.fk_rentaCliente" FromRole="Renta" ToRole="Cliente" />
+    <NavigationProperty Name="DetalleAdquirido" Relationship="eMovieProjectDBModel.fk_rentaDetalle" FromRole="Renta" ToRole="DetalleAdquirido" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreCompleto" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="apellidoCompleto" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="loginUser" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="contraseña" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="fotografia" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Administrador" Relationship="eMovieProjectDBModel.fk_adminUser" FromRole="Usuario" ToRole="Administrador" />
+    <NavigationProperty Name="Cajero" Relationship="eMovieProjectDBModel.fk_adminCajero" FromRole="Usuario" ToRole="Cajero" />
+    <NavigationProperty Name="Cliente" Relationship="eMovieProjectDBModel.fk_clienteUser" FromRole="Usuario" ToRole="Cliente" />
+  </EntityType>
+  <Association Name="fk_adminUser">
+    <End Role="Usuario" Type="eMovieProjectDBModel.Usuario" Multiplicity="1" />
+    <End Role="Administrador" Type="eMovieProjectDBModel.Administrador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Administrador">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pedidoAdministrador">
+    <End Role="Administrador" Type="eMovieProjectDBModel.Administrador" Multiplicity="1" />
+    <End Role="Pedido" Type="eMovieProjectDBModel.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrador">
+        <PropertyRef Name="idAdministrador" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="idAdministrador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_adminCajero">
+    <End Role="Usuario" Type="eMovieProjectDBModel.Usuario" Multiplicity="1" />
+    <End Role="Cajero" Type="eMovieProjectDBModel.Cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Cajero">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_compraCajero">
+    <End Role="Cajero" Type="eMovieProjectDBModel.Cajero" Multiplicity="1" />
+    <End Role="Compra" Type="eMovieProjectDBModel.Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cajero">
+        <PropertyRef Name="idCajero" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="idCajero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rentaCajero">
+    <End Role="Cajero" Type="eMovieProjectDBModel.Cajero" Multiplicity="1" />
+    <End Role="Renta" Type="eMovieProjectDBModel.Renta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cajero">
+        <PropertyRef Name="idCajero" />
+      </Principal>
+      <Dependent Role="Renta">
+        <PropertyRef Name="idCajero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_peliculaCategoria">
+    <End Role="Categoria" Type="eMovieProjectDBModel.Categoria" Multiplicity="1" />
+    <End Role="Pelicula" Type="eMovieProjectDBModel.Pelicula" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="Pelicula">
+        <PropertyRef Name="idCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_peliculaProveedorCategoria">
+    <End Role="Categoria" Type="eMovieProjectDBModel.Categoria" Multiplicity="1" />
+    <End Role="PeliculasProveedor" Type="eMovieProjectDBModel.PeliculasProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="PeliculasProveedor">
+        <PropertyRef Name="idCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_clienteUser">
+    <End Role="Usuario" Type="eMovieProjectDBModel.Usuario" Multiplicity="1" />
+    <End Role="Cliente" Type="eMovieProjectDBModel.Cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_compraCliente">
+    <End Role="Cliente" Type="eMovieProjectDBModel.Cliente" Multiplicity="1" />
+    <End Role="Compra" Type="eMovieProjectDBModel.Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rentaCliente">
+    <End Role="Cliente" Type="eMovieProjectDBModel.Cliente" Multiplicity="1" />
+    <End Role="Renta" Type="eMovieProjectDBModel.Renta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="Renta">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_compraDetalle">
+    <End Role="DetalleAdquirido" Type="eMovieProjectDBModel.DetalleAdquirido" Multiplicity="1" />
+    <End Role="Compra" Type="eMovieProjectDBModel.Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DetalleAdquirido">
+        <PropertyRef Name="idDetalleAdquirido" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="idDetalleAdquirido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_detalleAdquiridoPelicula">
+    <End Role="Pelicula" Type="eMovieProjectDBModel.Pelicula" Multiplicity="1" />
+    <End Role="DetalleAdquirido" Type="eMovieProjectDBModel.DetalleAdquirido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pelicula">
+        <PropertyRef Name="idPelicula" />
+      </Principal>
+      <Dependent Role="DetalleAdquirido">
+        <PropertyRef Name="idPelicula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rentaDetalle">
+    <End Role="DetalleAdquirido" Type="eMovieProjectDBModel.DetalleAdquirido" Multiplicity="1" />
+    <End Role="Renta" Type="eMovieProjectDBModel.Renta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DetalleAdquirido">
+        <PropertyRef Name="idDetalleAdquirido" />
+      </Principal>
+      <Dependent Role="Renta">
+        <PropertyRef Name="idDetalleAdquirido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_detallePedido">
+    <End Role="Pedido" Type="eMovieProjectDBModel.Pedido" Multiplicity="1" />
+    <End Role="DetallePedido" Type="eMovieProjectDBModel.DetallePedido" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="idPedido" />
+      </Principal>
+      <Dependent Role="DetallePedido">
+        <PropertyRef Name="idDetalle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_detallePelicula">
+    <End Role="PeliculasProveedor" Type="eMovieProjectDBModel.PeliculasProveedor" Multiplicity="1" />
+    <End Role="DetallePedido" Type="eMovieProjectDBModel.DetallePedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PeliculasProveedor">
+        <PropertyRef Name="idPelicula" />
+      </Principal>
+      <Dependent Role="DetallePedido">
+        <PropertyRef Name="idPelicula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pedidoProveedor">
+    <End Role="Proveedor" Type="eMovieProjectDBModel.Proveedor" Multiplicity="1" />
+    <End Role="Pedido" Type="eMovieProjectDBModel.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="idProveedor" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="idProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_peliculaProveedor">
+    <End Role="Proveedor" Type="eMovieProjectDBModel.Proveedor" Multiplicity="1" />
+    <End Role="PeliculasProveedor" Type="eMovieProjectDBModel.PeliculasProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="idProveedor" />
+      </Principal>
+      <Dependent Role="PeliculasProveedor">
+        <PropertyRef Name="idProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
